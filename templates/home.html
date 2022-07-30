@@ -1,0 +1,21 @@
+{% extends'base.html'%}
+{% block content %} 
+    <form action="/results">
+        <label for="from">Converting from:</label>
+        <select name="code_from" id="from" class="select">
+            <option value="USD">USD</option>
+            {% for code in rep %}
+            <option value="{{code}}">{{code}}</option> 
+            {%endfor%}
+        </select>
+        <label for="to">Converting to:</label>
+        <select name="code_to" id="to" class="select">
+            <option value="USD">USD</option>
+            {% for code in rep %}
+            <option value="{{code}}">{{code}}</option> 
+            {%endfor%}
+        </select>
+        <input id="input"   type="number" placeholder="Enter Amount" name="amount">
+        <button id="btn">Convert</button>
+    </form>
+{% endblock %}
